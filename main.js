@@ -1,84 +1,99 @@
-// === ГАМБУРГЕР ===
+// === HAMBURGER ===
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
-if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-}
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  hamburger.classList.toggle('open');
+});
 
 navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+  });
 });
 
-// === ЦИКЛІЧНА АНІМАЦІЯ КАРТОК ===
-const cardObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Коли картка з'являється в полі зору
-      const card = entry.target;
-      const index = Array.from(card.parentElement.children).indexOf(card);
-      card.style.transitionDelay = `${(index % 3) * 0.1}s`;
-      card.classList.add('card-animated');
-    } else {
-      // Коли картка виходить за межі екрана — прибираємо клас, 
-      // щоб вона могла "вилетіти" знову при наступному скролі
-      entry.target.classList.remove('card-animated');
-      entry.target.style.transitionDelay = '0s'; 
-    }
+// === CARD ANIMATION ===
+function showCards(panel) {
+  const cards = panel.querySelectorAll('.card');
+  cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(28px)';
+    card.style.transition = 'none';
   });
-}, { 
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px' // Спрацьовує трохи раніше, ніж картка торкнеться низу
-});
 
-function refreshObserver() {
-  document.querySelectorAll('.card').forEach(card => {
-    cardObserver.observe(card);
-  });
+  setTimeout(() => {
+    cards.forEach(card => {
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    });
+  }, 50);
 }
 
-// === ТАБИ МЕНЮ ===
+// === MENU TABS ===
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    // Зміна активної кнопки
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
 
-    // Зміна панелей
-    document.querySelectorAll('.menu-panel').forEach(p => {
-      p.classList.remove('active');
-      // Обов'язково ховаємо всі картки в неактивних табах
-      p.querySelectorAll('.card').forEach(c => {
-        c.classList.remove('card-animated');
-      });
-    });
-
-    const activePanel = document.querySelector(`[data-panel="${btn.dataset.tab}"]`);
-    if (activePanel) {
-      activePanel.classList.add('active');
-      // Даємо браузеру мілісекунду, щоб відмалювати панель, і запускаємо спостерігач
-      setTimeout(refreshObserver, 10);
-    }
+    const panel = document.querySelector('[data-panel="' + btn.dataset.tab + '"]');
+    panel.classList.add('active');
+    showCards(panel);
   });
 });
 
-// Перший запуск
-document.addEventListener('DOMContentLoaded', refreshObserver);
+// === SCROLL ANIMATION (перший таб при завантаженні) ===
+const firstPanel = document.querySelector('.menu-panel.active');
+if (firstPanel) {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        showCards(firstPanel);
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.1 });
 
-// === ВАЛІДАЦІЯ ФОРМИ ===
-const bookingForm = document.getElementById('bookingForm');
-if (bookingForm) {
-  bookingForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // (Твій існуючий код форми...)
-    const btn = bookingForm.querySelector('.form-btn');
-    btn.textContent = 'Відправляємо...';
-    setTimeout(() => {
-      bookingForm.reset();
-      document.getElementById('formSuccess').style.display = 'flex';
-      btn.style.display = 'none';
-    }, 900);
-  });
+  observer.observe(firstPanel);
 }
+
+// === BOOKING FORM ===
+const bookingForm = document.getElementById('bookingForm');
+const formSuccess = document.getElementById('formSuccess');
+
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('date').setAttribute('min', today);
+
+bookingForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const inputs = bookingForm.querySelectorAll('input[required], select[required]');
+  let valid = true;
+
+  inputs.forEach(input => {
+    if (!input.value.trim()) {
+      input.classList.add('input-error');
+      valid = false;
+    } else {
+      input.classList.remove('input-error');
+    }
+  });
+
+  if (!valid) return;
+
+  const btn = bookingForm.querySelector('.form-btn');
+  btn.textContent = 'Відправляємо...';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    bookingForm.querySelectorAll('input, select, textarea').forEach(el => el.value = '');
+    btn.style.display = 'none';
+    formSuccess.style.display = 'flex';
+  }, 900);
+});
+
+bookingForm.querySelectorAll('input, select').forEach(el => {
+  el.addEventListener('input', () => el.classList.remove('input-error'));
+});
