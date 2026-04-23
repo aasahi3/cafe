@@ -392,6 +392,28 @@ address a { color: inherit; text-decoration: none; }
 @media (max-width: 700px) {
   .booking-inner { grid-template-columns: 1fr; gap: 2rem; }
 }
+/* Стилі для ліній гамбургера */
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: #F5F0E8;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Плавний перехід */
+  position: relative;
+}
+
+/* Перетворення на хрестик, коли додано клас .open */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0; /* Середня лінія зникає */
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
 .hamburger {
   display: none;
   flex-direction: column;
