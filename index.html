@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Taste<span>&amp;</span>Eat</a>
   <ul class="nav-links" id="navLinks">
@@ -17,12 +16,11 @@
     <li><a href="#booking">Бронювання</a></li>
     <li><a href="#footer">Контакти</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Меню">
+  <button class="hamburger" id="hamburger" aria-label="Відкрити меню">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <p>Авторська кухня · Львів</p>
   <h1>Taste<em>&amp;</em>Eat</h1>
@@ -30,7 +28,6 @@
   <a href="#menu" class="hero-btn">Переглянути меню</a>
 </section>
 
-<!-- MENU -->
 <section id="menu">
   <div class="menu-wrap">
     <p class="section-label">Наше меню</p>
@@ -44,8 +41,6 @@
     </div>
 
     <div class="cards">
-
-      <!-- ЗАКУСКИ -->
       <div class="menu-panel active" data-panel="starters">
         <article class="card">
           <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&q=80" alt="Брускети" loading="lazy" />
@@ -85,7 +80,6 @@
         </article>
       </div>
 
-      <!-- ОСНОВНЕ -->
       <div class="menu-panel" data-panel="mains">
         <article class="card">
           <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Форель" loading="lazy" />
@@ -111,109 +105,44 @@
             </div>
           </div>
         </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&q=80" alt="Паста" loading="lazy" />
-          <div class="card-body">
-            <p class="card-cat">Паста</p>
-            <h3 class="card-name">Лінгвіні з морепродуктами</h3>
-            <p class="card-desc">Лінгвіні al dente, мідії, креветки, кальмар, томати, часник, біле вино.</p>
-            <div class="card-foot">
-              <span class="price">420 ₴</span>
-            </div>
-          </div>
-        </article>
       </div>
 
-      <!-- ДЕСЕРТИ -->
       <div class="menu-panel" data-panel="desserts">
         <article class="card">
           <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80" alt="Тірамісу" loading="lazy" />
           <div class="card-body">
             <p class="card-cat">Десерт</p>
             <h3 class="card-name">Класичне тірамісу</h3>
-            <p class="card-desc">Маскарпоне, савоярді, еспресо, ром, какао — без компромісів.</p>
             <div class="card-foot">
               <span class="price">165 ₴</span>
             </div>
           </div>
         </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Фондан" loading="lazy" />
-          <div class="card-body">
-            <p class="card-cat">Десерт</p>
-            <h3 class="card-name">Шоколадний фондан</h3>
-            <p class="card-desc">Тепле тісто з рідким центром, ванільне морозиво, ягодовий кулі.</p>
-            <div class="card-foot">
-              <span class="price">195 ₴</span>
-              <span class="badge">Топ продаж</span>
-            </div>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Панакота" loading="lazy" />
-          <div class="card-body">
-            <p class="card-cat">Десерт</p>
-            <h3 class="card-name">Панакота з манго</h3>
-            <p class="card-desc">Ніжна ванільна панакота, манговий кулі, свіжа м'ята, кокосова стружка.</p>
-            <div class="card-foot">
-              <span class="price">155 ₴</span>
-              <span class="badge">Без глютену</span>
-            </div>
-          </div>
-        </article>
       </div>
 
-      <!-- НАПОЇ -->
       <div class="menu-panel" data-panel="drinks">
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" alt="Коктейль" loading="lazy" />
-          <div class="card-body">
-            <p class="card-cat">Коктейль</p>
-            <h3 class="card-name">Garden Spritz</h3>
-            <p class="card-desc">Просеко, огірок, базилік, лимонний сік, тонік — легкий аперитив.</p>
-            <div class="card-foot">
-              <span class="price">185 ₴</span>
-            </div>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Кава" loading="lazy" />
-          <div class="card-body">
-            <p class="card-cat">Кава</p>
-            <h3 class="card-name">Фільтр-кава одного походження</h3>
-            <p class="card-desc">Моноспешалті, обсмажений партнерами-фермерами. Щотижня нові позиції.</p>
-            <div class="card-foot">
-              <span class="price">95 ₴</span>
-            </div>
-          </div>
-        </article>
         <article class="card">
           <img src="https://static.insales-cdn.com/images/articles/1/5925/2283301/lemonade-1.jpg" alt="Лимонад" loading="lazy" />
           <div class="card-body">
             <p class="card-cat">Безалкогольне</p>
             <h3 class="card-name">Домашній лимонад</h3>
-            <p class="card-desc">Свіжий лимон, м'ята, імбир, мед, газована вода — без цукру.</p>
             <div class="card-foot">
               <span class="price">110 ₴</span>
-              <span class="badge">Без цукру</span>
             </div>
           </div>
         </article>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- CHEF -->
 <section id="chef" class="chef-section">
   <div class="chef-inner">
     <img class="chef-img" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=700&q=80" alt="Шеф Олексій Мороз" loading="lazy" />
     <div class="chef-info">
       <p class="section-label">Наш шеф-кухар</p>
       <div class="chef-name">Олексій<br>Мороз</div>
-      <p class="chef-bio">Олексій починав свій шлях у маленькій бабусиній кухні на Поділлі. Після навчання у кулінарних школах Парижа та стажування у Барселоні він повернувся до України з місією — показати, що українська кухня може бути сучасною і сміливою.</p>
-      <p class="chef-bio">«Найкращі страви народжуються з поваги до продукту. Ми працюємо з локальними фермерами і не ховаємо смаки — ми їх розкриваємо.»</p>
+      <p class="chef-bio">Олексій починав свій шлях у маленькій бабусиній кухні на Поділлі. Після навчання у Парижі він повернувся до України з місією — зробити українську кухню сучасною.</p>
       <div class="chef-stats">
         <div>
           <div class="stat-num">12+</div>
@@ -232,13 +161,11 @@
   </div>
 </section>
 
-<!-- BOOKING FORM -->
 <section id="booking" class="booking-section">
   <div class="booking-inner">
     <div class="booking-text">
       <p class="section-label">Резервація</p>
       <h2 class="booking-title">Забронюйте<br><em>столик</em></h2>
-      <p class="booking-desc">Завітайте до нас і насолодіться авторською кухнею в серці Львова. Бронювання підтверджується протягом 30 хвилин.</p>
     </div>
     <form class="booking-form" id="bookingForm" novalidate>
       <div class="form-row">
@@ -248,165 +175,27 @@
         </div>
         <div class="form-group">
           <label for="phone">Телефон</label>
-          <input type="tel" id="phone" placeholder="+38 (0__) ___-__-__" required />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="date">Дата</label>
-          <input type="date" id="date" required />
-        </div>
-        <div class="form-group">
-          <label for="time">Час</label>
-          <select id="time" required>
-            <option value="" disabled selected>Оберіть час</option>
-            <option>11:00</option><option>12:00</option><option>13:00</option>
-            <option>14:00</option><option>15:00</option><option>16:00</option>
-            <option>17:00</option><option>18:00</option><option>19:00</option>
-            <option>20:00</option><option>21:00</option><option>22:00</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="guests">Гостей</label>
-          <select id="guests" required>
-            <option value="" disabled selected>Кількість</option>
-            <option>1</option><option>2</option><option>3</option><option>4</option>
-            <option>5</option><option>6</option><option>7</option><option>8+</option>
-          </select>
+          <input type="tel" id="phone" placeholder="+380..." required />
         </div>
       </div>
       <div class="form-group">
-        <label for="wishes">Побажання</label>
-        <textarea id="wishes" rows="3" placeholder="Особливі побажання, алергії, привід..."></textarea>
+        <label for="date">Дата</label>
+        <input type="date" id="date" required />
       </div>
-      <button type="submit" class="form-btn">Забронювати столик</button>
-      <div class="form-success" id="formSuccess">
-        <span>✓</span> Дякуємо! Ваше бронювання прийнято. Ми зв'яжемося з вами найближчим часом.
-      </div>
+      <button type="submit" class="form-btn">Забронювати</button>
+      <div class="form-success" id="formSuccess">✓ Бронювання прийнято!</div>
     </form>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer id="footer">
   <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h2>Taste<span>&amp;</span>Eat</h2>
-        <p>Авторський ресторан у серці Львова. Відкриті щодня для тих, хто цінує справжній смак.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Навігація</h4>
-        <ul>
-          <li><a href="#menu">Меню</a></li>
-          <li><a href="#chef">Шеф-кухар</a></li>
-          <li><a href="#">Про нас</a></li>
-          <li><a href="#">Бронювання</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Контакти</h4>
-        <address>
-          вул. Ринок, 12, Львів<br><br>
-          <a href="tel:+380321234567">+38 (032) 123-45-67</a><br>
-          <a href="mailto:hello@tasteeat.ua">hello@tasteeat.ua</a><br><br>
-          Пн–Пт: 11:00 – 23:00<br>
-          Сб–Нд: 10:00 – 00:00
-        </address>
-      </div>
-    </div>
     <div class="footer-bottom">
-      <p>© 2025 Taste&amp;Eat. Усі права захищені.</p>
+      <p>© 2025 Taste&amp;Eat. Львів, Україна.</p>
     </div>
   </div>
 </footer>
 
-<script>
-  // Hamburger
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
-
-  // Tabs
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelector('[data-panel="' + btn.dataset.tab + '"]').classList.add('active');
-      // Animate newly visible cards
-      animateVisibleCards();
-    });
-  });
-
-  // Card scroll animation
-  function animateVisibleCards() {
-    document.querySelectorAll('.card:not(.card-animated)').forEach((card, i) => {
-      const rect = card.getBoundingClientRect();
-      if (rect.top < window.innerHeight + 60) {
-        card.style.transitionDelay = (i % 3) * 80 + 'ms';
-        card.classList.add('card-animated');
-      }
-    });
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const card = entry.target;
-        const siblings = Array.from(card.parentElement.children).filter(el => el.classList.contains('card'));
-        const idx = siblings.indexOf(card);
-        card.style.transitionDelay = (idx % 3) * 90 + 'ms';
-        card.classList.add('card-animated');
-        observer.unobserve(card);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.card').forEach(card => observer.observe(card));
-
-  // Booking form
-  const bookingForm = document.getElementById('bookingForm');
-  const formSuccess = document.getElementById('formSuccess');
-
-  // Set min date to today
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('date').setAttribute('min', today);
-
-  bookingForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const inputs = bookingForm.querySelectorAll('input[required], select[required]');
-    let valid = true;
-    inputs.forEach(input => {
-      if (!input.value.trim()) {
-        input.classList.add('input-error');
-        valid = false;
-      } else {
-        input.classList.remove('input-error');
-      }
-    });
-    if (!valid) return;
-    const btn = bookingForm.querySelector('.form-btn');
-    btn.textContent = 'Відправляємо...';
-    btn.disabled = true;
-    setTimeout(() => {
-      bookingForm.querySelectorAll('input, select, textarea').forEach(el => el.value = '');
-      btn.style.display = 'none';
-      formSuccess.style.display = 'flex';
-    }, 900);
-  });
-
-  bookingForm.querySelectorAll('input, select').forEach(el => {
-    el.addEventListener('input', () => el.classList.remove('input-error'));
-  });
-</script>
-
 <script src="main.js" defer></script>
-
 </body>
 </html>
